@@ -51,11 +51,11 @@ Iframes open a notebook directly into your webpage.
 </marimo-iframe>
 
 <marimo-iframe>
-    <pre>
+    ```python
     import matplotlib.pyplot as plt
     import numpy as np
     import marimo as mo
-    </pre>
+    ```
 </marimo-iframe>
 
 ## Using buttons
