@@ -50,14 +50,6 @@ Iframes open a notebook directly into your webpage.
     </pre>
 </marimo-iframe>
 
-<marimo-iframe>
-    ```python
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import marimo as mo
-    ```
-</marimo-iframe>
-
 ## Using buttons
 
 Buttons will open a notebook in the marimo playground.
