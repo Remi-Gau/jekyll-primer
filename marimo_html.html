@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/jekyll-primer/assets/css/style.css?v=b3e90d835c53a708db906125978a427e722f291c">
+
+    <!-- Needed to render Marimo in HTML. -->
+    <script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>
+</head>
+
+<body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+        <h1 id="marimo-in-jekyll">Marimo in Jekyll (pure html)</h1>
+
+        <p>This page shows how to use <a href="https://docs.marimo.io/" target="_blank">Marimo notebooks</a>
+            in a Jekyll website using pure HTML.
+        </p>
+
+        <p>
+            The example below is taken from
+            <a href="An example showing how to plot the coherence of two signals using cohere." target="_blank">
+                the matplotlib documentation</a>.
+        </p>
+
+        <p>
+            See <a href="" target="_blank">this post</a> for more information.
+        </p>
+
+        <h2 id="iframe">Using iframes</h2>
+
+        <p>Iframes open a notebook directly into your webpage.</p>
+
+        <marimo-iframe>
+            <pre>
+            import marimo as mo
+            import matplotlib.pyplot as plt
+            import numpy as np
+            </pre>
+
+            <pre>
+            mo.md("Taken from the [matplotlib doc](https://matplotlib.org/stable/gallery/lines_bars_and_markers/cohere.html)")
+            </pre>
+
+            <pre>
+            mo.md("Fixing random state for reproducibility")
+            </pre>
+
+            <pre>
+            np.random.seed(19680801)
+            </pre>
+
+            <pre>
+            dt = 0.01
+            t = np.arange(0, 30, dt)
+            nse1 = np.random.randn(len(t))                 # white noise 1
+            nse2 = np.random.randn(len(t))                 # white noise 2
+            </pre>
+
+            <pre>
+            mo.md("Two signals with a coherent part at 10 Hz and a random part")
+            </pre>
+
+            <pre>
+            s1 = np.sin(2 * np.pi * 10 * t) + nse1
+            s2 = np.sin(2 * np.pi * 10 * t) + nse2
+            </pre>
+
+            <pre>
+            fig, axs = plt.subplots(2, 1, layout='constrained')
+            axs[0].plot(t, s1, t, s2)
+            axs[0].set_xlim(0, 2)
+            axs[0].set_xlabel('Time (s)')
+            axs[0].set_ylabel('s1 and s2')
+            axs[0].grid(True)
+
+            cxy, f = axs[1].cohere(s1, s2, NFFT=256, Fs=1. / dt)
+            axs[1].set_ylabel('Coherence')
+
+            plt.show()
+            </pre>
+
+        </marimo-iframe>
+
+        <h2 id="buttons">Using buttons</h2>
+
+        <p>Buttons will open a notebook in the marimo playground.</p>
+
+        <marimo-button>
+
+            <pre>
+            import marimo as mo
+            import matplotlib.pyplot as plt
+            import numpy as np
+
+            # Fixing random state for reproducibility
+            np.random.seed(19680801)
+
+            # Example data
+            people = ('Tom', 'Dick', 'Harry', 'Slim', 'Jim')
+            y_pos = np.arange(len(people))
+            performance = 3 + 10 * np.random.rand(len(people))
+            error = np.random.rand(len(people))
+            
+            fig, ax = plt.subplots()
+            ax.barh(y_pos, performance, xerr=error, align='center')
+            ax.set_yticks(y_pos, labels=people)
+            ax.invert_yaxis()  # labels read top-to-bottom
+            ax.set_xlabel('Performance')
+            ax.set_title('How fast do you want to go today?')
+            
+            plt.show()
+
+            mo.md("Taken from the [matplotlib doc](https://matplotlib.org/stable/gallery/lines_bars_and_markers/barh.html)")
+            </pre>
+
+        </marimo-button>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+</body>
+
+</html>
