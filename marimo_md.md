@@ -1,6 +1,6 @@
-# Marimo in Jekyll (markdoww)
+# Marimo in Jekyll (markdown)
 
-This page shows how to use [Marimo notebooks](https://docs.marimo.io/)
+This page shows how to use [Marimo notebooks snippets](https://docs.marimo.io/guides/publishing/from_code_snippets/)
 in a Jekyll website using markdown.
 
 See this post for more information.
