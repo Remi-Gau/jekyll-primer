@@ -1,7 +1,7 @@
 # Marimo in Jekyll (markdoww)
 
 This page shows how to use [Marimo notebooks](https://docs.marimo.io/)
-in a Jekyll website using pure HTML.
+in a Jekyll website using markdown.
 
 See this post for more information.
 
@@ -47,6 +47,14 @@ Iframes open a notebook directly into your webpage.
     ax.legend(loc="upper right")
 
     plt.show()
+    </pre>
+</marimo-iframe>
+
+<marimo-iframe>
+    <pre>
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import marimo as mo
     </pre>
 </marimo-iframe>
 
