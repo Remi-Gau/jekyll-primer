@@ -1,4 +1,3 @@
-
 # Marimo in Jekyll (markdoww)
 
 This page shows how to use [Marimo notebooks](https://docs.marimo.io/)
@@ -94,4 +93,7 @@ Buttons will open a notebook in the marimo playground.
 
 </marimo-button>
 
+[SOURCE](https://github.com/Remi-Gau/jekyll-primer/blob/main/marimo_md.md)
+
+<!-- Needed to render Marimo in HTML. -->
 <script src="https://cdn.jsdelivr.net/npm/@marimo-team/marimo-snippets@1"></script>
